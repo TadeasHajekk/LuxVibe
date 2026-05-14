@@ -1,0 +1,32 @@
+{% extends 'exitems/layout.html' %}
+
+{% block content %}
+    <div class="mt-5 row">
+        <div class="col-md-6">
+            <!-- Tady by v budoucnu mohl být obrázek -->
+            <div class="col-md-6">
+    <!-- Zkontrolujeme, jestli má produkt nahraný obrázek -->
+    {% if produkt.image %}
+        <img src="{{ produkt.image.url }}" class="img-fluid rounded shadow" alt="{{ produkt.name }}">
+    {% else %}
+        <!-- Pokud obrázek nemá, ukážeme šedý zástupný blok -->
+        <div class="bg-secondary text-white d-flex align-items-center justify-content-center rounded shadow" style="height: 400px; font-size: 24px;">
+            Fotografie se připravuje
+        </div>
+    {% endif %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="display-5 fw-bold">{{ produkt.name }}</h2>
+            <h4 class="text-muted mb-4">{{ produkt.brand }}</h4>
+            
+            <p class="fs-4"><strong>Velikost:</strong> {{ produkt.size }}</p>
+            <p class="fs-4"><strong>Skladem:</strong> {{ produkt.stock }} ks</p>
+            
+            <h3 class="text-success fw-bold my-4">{{ produkt.price }} Kč</h3>
+            
+            <!-- Simulace vložení do košíku -->
+            <a href="{% url 'products' %}" class="btn btn-dark btn-lg w-100">Zpět na nabídku</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'exitems/layout.html' %}
+
+{% block content %}
+    <div class="mt-5 row justify-content-center">
+        <div class="col-md-6">
+            <h2>Přihlášení do systému</h2>
+            <!-- Zatím jen prázdný vizuální formulář -->
+            <form class="mt-4">
+                <div class="mb-3">
+                    <label class="form-label">Emailová adresa</label>
+                    <input type="email" class="form-control" placeholder="jan@novak.cz">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Heslo</label>
+                    <input type="password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-dark w-100">Přihlásit se</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

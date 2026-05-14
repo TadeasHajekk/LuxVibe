@@ -1,0 +1,29 @@
+{% extends 'exitems/layout.html' %}
+
+{% block content %}
+    <!-- Uvítací Dark-mode Hero sekce -->
+    <div class="p-5 mb-4 bg-dark text-white rounded-3 mt-4 text-center shadow">
+        <div class="container-fluid py-5">
+            <h1 class="display-4 fw-bold tracking-tight">Vítejte v LuxVibe</h1>
+            <p class="col-md-8 mx-auto fs-4 mt-3">Exkluzivní místo, kde se setkává nekompromisní styl s tou nejvyšší kvalitou. Objevte kousky, které vás odliší od davu.</p>
+            <!-- Tlačítko odkazující na novou stránku produktů -->
+            <a href="{% url 'products' %}" class="btn btn-light btn-lg mt-4 fw-bold px-5">Prozkoumat kolekci</a>
+        </div>
+    </div>
+
+    <!-- Sekce "Co u nás najdete" -->
+    <div class="row align-items-md-stretch mt-5">
+        <div class="col-md-6 mb-4">
+            <div class="h-100 p-5 bg-white border rounded-3 text-center shadow-sm">
+                <h2 class="fw-bold mb-3">Prémiový výběr</h2>
+                <p class="fs-5 text-muted">Soustředíme se pouze na limitované edice a světové značky. Každý kousek v naší nabídce prošel přísným výběrem.</p>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="h-100 p-5 bg-white border rounded-3 text-center shadow-sm">
+                <h2 class="fw-bold mb-3">Rychlost a vizuál</h2>
+                <p class="fs-5 text-muted">Náš e-shop je navržen tak, aby byl nákup nejen rychlý, ale aby vás bavil i svým čistým a přehledným designem.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
