@@ -26,6 +26,7 @@
             <h3 class="text-success fw-bold my-4">{{ produkt.price }} Kč</h3>
             
             <!-- Simulace vložení do košíku -->
+             <a href="{% url 'add_to_cart' produkt.id %}" class="btn btn-primary btn-lg w-100 mb-2">Přidat do košíku</a>
             <a href="{% url 'products' %}" class="btn btn-dark btn-lg w-100">Zpět na nabídku</a>
         </div>
     </div>

@@ -1,0 +1,46 @@
+{% extends 'exitems/layout.html' %}
+
+{% block content %}
+    <div class="mt-5">
+        <h2 class="mb-4">Váš nákupní košík</h2>
+        
+        {% if polozky %}
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-hover align-middle bg-white mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Produkt</th>
+                            <th>Množství</th>
+                            <th>Cena za položku</th>
+                            <th>Akce</th> </tr>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for polozka in polozky %}
+                            <tr>
+                                <td>
+                                    <strong>{{ polozka.product.name }}</strong><br>
+                                    <small class="text-muted">{{ polozka.product.brand }} | Velikost: {{ polozka.product.size }}</small>
+                                </td>
+                                <td>{{ polozka.quantity }} ks</td>
+                                <td class="fw-bold">{{ polozka.total_price }} Kč</td>
+                                <td>
+                                <a href="{% url 'remove_from_cart' polozka.id %}" class="btn btn-danger btn-sm">Odebrat</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="text-end mt-4">
+                <h4>Celková částka: <span class="text-success fw-bold">{{ celkova_cena }} Kč</span></h4>
+                <a href="#" class="btn btn-success btn-lg mt-2 px-5">Přejít k pokladně</a>
+            </div>
+        {% else %}
+            <div class="alert alert-warning fs-5">
+                Váš košík je zatím prázdný. <a href="{% url 'products' %}" class="alert-link">Zpět na nabídku</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
